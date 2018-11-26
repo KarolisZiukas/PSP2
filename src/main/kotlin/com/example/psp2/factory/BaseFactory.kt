@@ -1,8 +1,9 @@
 package com.example.psp2.factory
 
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
+import org.springframework.stereotype.Component
 
+@Component
 abstract class BaseFactory {
 
-//   abstract fun <T : Any?> getModel(position: String): T
+   abstract fun <T : Any?> getModel(position: String): T
 }

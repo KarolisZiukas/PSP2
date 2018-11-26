@@ -4,9 +4,11 @@ import com.example.psp2.entities.Employee
 import com.example.psp2.service.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 
-@RestController
+@Controller
 class EmployeesController {
 
     @Autowired
@@ -19,8 +21,14 @@ class EmployeesController {
     }
 
     @GetMapping("/employees")
-    fun getEmployees(): List<Employee> {
-        return employeesService.getAllEmployees()
+    fun getEmployees(model: Model): String{
+        model.addAttribute("employees", Employee())
+        return "index"
+    }
+
+    @PostMapping("/employees")
+    fun submitEmployee(@ModelAttribute employees: Employee): String {
+        return "result"
     }
 
     @GetMapping("/employees/import")
