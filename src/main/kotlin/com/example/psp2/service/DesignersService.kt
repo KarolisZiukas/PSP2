@@ -1,31 +1,26 @@
 package com.example.psp2.service
 
 import com.example.psp2.entities.Employee
-import com.example.psp2.repo.CarRepository
 import com.example.psp2.repo.EmployeesRepo
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 
 @Service
+@Qualifier("designersService")
 open class DesignersService: BaseEmployeesService() {
 
     @Autowired
-    lateinit var employeesRepo: EmployeesRepo
+    override lateinit var employeesRepo: EmployeesRepo
 
-    @Autowired
-    lateinit var carRepository: CarRepository
-
-    override fun getPosition() = "DESIGNER"
-
-    override fun getSpecificEmployees(): List<Employee> {
-        println("OOOOOPP")
-        return getSpecificEmployeesList()
+    override fun getSpecificEmployees(position: String): List<Employee> {
+        return getSpecificEmployeesList(position)
     }
 
-    private fun getSpecificEmployeesList(): List<Employee> {
+    private fun getSpecificEmployeesList(position: String): List<Employee> {
         val designersList: MutableList<Employee> = mutableListOf()
-        for(item in carRepository.findAll()) {
-            if (item.position == getPosition()) {
+        for(item in employeesRepo.findAll()) {
+            if (item.position == position) {
                 designersList.add(item)
             }
         }

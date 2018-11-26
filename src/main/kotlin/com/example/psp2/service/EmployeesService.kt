@@ -6,8 +6,10 @@ interface EmployeesService {
 
     fun getAllEmployees(): List<Employee>
 
-    fun getSpecificEmployees(): List<Employee>
+    fun getSpecificEmployees(position: String): List<Employee>
 
-    fun addEmployee(employee: Employee)
+    fun addEmployee(employee: Employee): Employee
+
+    fun importData()
 
 }

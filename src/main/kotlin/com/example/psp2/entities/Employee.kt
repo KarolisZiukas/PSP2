@@ -1,14 +1,15 @@
 package com.example.psp2.entities
 
+import javax.persistence.DiscriminatorColumn
 import javax.persistence.Entity
 import javax.persistence.Id
-import javax.persistence.Table
 
+@DiscriminatorColumn
 @Entity
-@Table(name = "employees")
-data class Employee(
-        @Id val id: String,
-        val name: String,
-        val wage: Double,
-        val position: String
-)
+open class Employee {
+    @Id
+    open var id: String? = null
+    open var wage: Double? = null
+    open var name: String? = null
+    open var position: String? = null
+}
