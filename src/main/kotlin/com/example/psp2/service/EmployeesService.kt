@@ -10,6 +10,6 @@ interface EmployeesService {
 
     fun addEmployee(employee: Employee): Employee
 
-    fun importData()
+    fun importData(employee: Employee)
 
 }

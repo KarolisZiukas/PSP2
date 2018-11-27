@@ -17,7 +17,6 @@ abstract class BaseEmployeesService : EmployeesService {
     @Autowired
     lateinit var employeesFactory: EmployeesFactory
 
-
     @Autowired
     lateinit var employeesRepo: EmployeesRepo
 
@@ -29,7 +28,7 @@ abstract class BaseEmployeesService : EmployeesService {
         return employeesRepo.save(employee)
     }
 
-    override fun importData() {
-      employeesRepo.save(employeesFactory.getModel("manager"))
+    override fun importData(employee: Employee) {
+      employeesRepo.save(employeesFactory.getModel(employee))
     }
 }

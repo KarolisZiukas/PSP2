@@ -1,14 +1,13 @@
-package com.example.psp2.controller
+package com.example.psp2.controller.employeesController.empsController
 
 import com.example.psp2.entities.employees.Employee
 import com.example.psp2.service.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
-import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 
-@Controller
+@RestController
 class EmployeesController {
 
     @Autowired
@@ -21,19 +20,20 @@ class EmployeesController {
     }
 
     @GetMapping("/employees")
-    fun getEmployees(model: Model): String{
+    fun getEmployees(model: Model): String {
         model.addAttribute("employees", Employee())
         return "index"
     }
 
-    @PostMapping("/employees")
-    fun submitEmployee(@ModelAttribute employees: Employee): String {
-        return "result"
+    @PostMapping("/employees/add")
+    fun submitEmployee(@RequestBody employees: Employee): Employee {
+        employeesService.importData(employees)
+        return employees
     }
 
-    @GetMapping("/employees/import")
-    fun importData(){
-        employeesService.importData()
-    }
+//    @PostMapping("/employees/import")
+//    fun importData(@RequestBody employees: Employee){
+//        employeesService.importData(employees)
+//    }
 }
 

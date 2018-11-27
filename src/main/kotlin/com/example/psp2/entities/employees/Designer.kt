@@ -4,5 +4,5 @@ import javax.persistence.Entity
 
 @Entity
 class Designer: Employee() {
-    var responsobilities: String? = null
+    var isJunior: Boolean? = null
 }

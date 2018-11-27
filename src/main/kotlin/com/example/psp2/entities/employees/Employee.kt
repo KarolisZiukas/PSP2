@@ -8,8 +8,8 @@ import javax.persistence.Id
 @Entity
 open class Employee {
     @Id
-    open var id: String? = null
-    open var wage: Double? = null
-    open var name: String? = null
-    open var position: String? = null
+    var id: String? = null
+    var wage: Double? = null
+    var name: String? = null
+    var position: String? = null
 }

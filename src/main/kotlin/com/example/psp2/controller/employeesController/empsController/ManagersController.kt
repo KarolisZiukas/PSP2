@@ -1,4 +1,4 @@
-package com.example.psp2.controller
+package com.example.psp2.controller.employeesController.empsController
 
 import com.example.psp2.entities.employees.Employee
 import com.example.psp2.service.EmployeesService

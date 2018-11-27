@@ -6,11 +6,11 @@ import com.example.psp2.entities.employees.Manager
 import org.springframework.stereotype.Component
 
 @Component
-class EmployeesFactory : BaseFactory() {
+class EmployeesFactory : BaseFactory<Employee>() {
 
-    override fun <T : Any?> getModel(position: String): T {
+    override fun getModel(position: Employee): Employee {
             var emp: Employee?
-            if (position == "designer") {
+            if (position.position == "designer") {
                 emp = Designer()
                 emp.id = "2"
                 emp.name = "James"
@@ -23,6 +23,6 @@ class EmployeesFactory : BaseFactory() {
                 emp.position = "manager"
                 emp.wage = 2.5
             }
-            return emp as T
+            return emp
     }
 }
