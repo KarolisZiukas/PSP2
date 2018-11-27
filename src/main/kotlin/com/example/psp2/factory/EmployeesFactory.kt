@@ -8,21 +8,20 @@ import org.springframework.stereotype.Component
 @Component
 class EmployeesFactory : BaseFactory<Employee>() {
 
-    override fun getModel(position: Employee): Employee {
-            var emp: Employee?
-            if (position.position == "designer") {
-                emp = Designer()
-                emp.id = position.id
-                emp.name = position.name
-                emp.position = position.position
-                emp.wage = position.wage
-            } else {
-                emp = Manager()
-                emp.id = position.id
-                emp.name = position.name
-                emp.position = position.position
-                emp.wage = position.wage
-            }
-            return emp
+    override fun getModel(model: Employee): Employee {
+        return when {
+            model.position == "designer" -> createModel(model, Designer())
+            else -> createModel(model, Manager())
+        }
+    }
+
+    override fun createModel(model: Employee, type: Employee): Employee {
+        val emp: Employee?
+        emp = type
+        emp.id = model.id
+        emp.name = model.name
+        emp.position = model.position
+        emp.wage = model.wage
+        return emp
     }
 }

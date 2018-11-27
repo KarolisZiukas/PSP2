@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/cars/lw")
-class LightWeightCarsController {
+class LightWeightCarsControlle: CarsController() {
 
     @Autowired
     @Qualifier("lightWeightCarService")
-    lateinit var carsService: CarService
+    override lateinit var carsService: CarService
+
 
     @GetMapping("/getAll")
-    fun getLightWeightCars(): List<Car> {
+    fun getSpecific(): List<Car> {
         return carsService.getSpecificCars()
     }
-
 }

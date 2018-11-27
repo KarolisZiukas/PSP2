@@ -10,12 +10,12 @@ class CarsFactory: BaseFactory<Car>() {
 
     override fun getModel(model: Car): Car {
         return when {
-            model.type == "van" -> createCar(model, Van())
-            else -> createCar(model, LightWeightCar())
+            model.type == "van" -> createModel(model, Van())
+            else -> createModel(model, LightWeightCar())
         }
     }
 
-    fun createCar(model: Car, type: Car): Car {
+    override fun createModel(model: Car, type: Car): Car {
         val car: Car?
         car = type
         car.id = model.id

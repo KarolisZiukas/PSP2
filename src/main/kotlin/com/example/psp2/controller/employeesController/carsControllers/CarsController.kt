@@ -1,5 +1,6 @@
 package com.example.psp2.controller.employeesController.carsControllers
 
+import com.example.psp2.controller.employeesController.Controller
 import com.example.psp2.entities.employees.EmployeeCars.Car
 import com.example.psp2.service.carsService.CarService
 import org.springframework.beans.factory.annotation.Autowired
@@ -15,13 +16,14 @@ class CarsController {
     lateinit var carsService: CarService
 
     @GetMapping("/cars/get")
-    fun getCars(model: Model): List<Car> {
+    fun getAll(): List<Car> {
         return carsService.getAllCars()
     }
 
     @PostMapping("/cars/add")
-    fun submitEmployee(@RequestBody car: Car): Car {
-        carsService.importCar(car)
-        return car
+    fun add(model: Car): Car {
+        carsService.importCar(model)
+        return model
     }
+
 }
