@@ -1,7 +1,7 @@
 package com.example.psp2.controller.employeesController.empsController
 
 import com.example.psp2.entities.employees.Employee
-import com.example.psp2.service.EmployeesService
+import com.example.psp2.service.employeesService.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.ui.Model
@@ -30,10 +30,5 @@ class EmployeesController {
         employeesService.importData(employees)
         return employees
     }
-
-//    @PostMapping("/employees/import")
-//    fun importData(@RequestBody employees: Employee){
-//        employeesService.importData(employees)
-//    }
 }
 

@@ -3,22 +3,25 @@ package com.example.psp2.factory
 import com.example.psp2.entities.employees.EmployeeCars.Car
 import com.example.psp2.entities.employees.EmployeeCars.LightWeightCar
 import com.example.psp2.entities.employees.EmployeeCars.Van
+import org.springframework.stereotype.Component
 
+@Component
 class CarsFactory: BaseFactory<Car>() {
 
     override fun getModel(model: Car): Car {
-        var car: Car?
-        if (model is Van) {
-            car = Van()
-            car.id = model.id
-            car.make = model.make
-            car.model = model.model
-        } else {
-            car = LightWeightCar()
-            car.id = model.id
-            car.make = model.make
-            car.model = model.model
+        return when {
+            model.type == "van" -> createCar(model, Van())
+            else -> createCar(model, LightWeightCar())
         }
+    }
+
+    fun createCar(model: Car, type: Car): Car {
+        val car: Car?
+        car = type
+        car.id = model.id
+        car.make = model.make
+        car.model = model.model
+        car.type = model.type
         return car
     }
 }

@@ -1,5 +1,6 @@
 package com.example.psp2.entities.employees.EmployeeCars
 
-class Van: Car() {
-    var capacity: Int? = null
-}
+import javax.persistence.Entity
+
+@Entity
+class Van: Car()

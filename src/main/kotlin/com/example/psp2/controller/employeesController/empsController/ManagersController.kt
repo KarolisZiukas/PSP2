@@ -1,7 +1,7 @@
 package com.example.psp2.controller.employeesController.empsController
 
 import com.example.psp2.entities.employees.Employee
-import com.example.psp2.service.EmployeesService
+import com.example.psp2.service.employeesService.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.web.bind.annotation.GetMapping
