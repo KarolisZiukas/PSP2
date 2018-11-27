@@ -11,13 +11,13 @@ class CarsFactory: BaseFactory<Car>() {
         if (model is Van) {
             car = Van()
             car.id = model.id
-            car.make = model.model
-            car.model = "Golf"
+            car.make = model.make
+            car.model = model.model
         } else {
             car = LightWeightCar()
-            car.id = "3"
-            car.make = "Skoda"
-            car.model = "Octavia"
+            car.id = model.id
+            car.make = model.make
+            car.model = model.model
         }
         return car
     }

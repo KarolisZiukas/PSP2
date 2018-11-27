@@ -12,16 +12,16 @@ class EmployeesFactory : BaseFactory<Employee>() {
             var emp: Employee?
             if (position.position == "designer") {
                 emp = Designer()
-                emp.id = "2"
-                emp.name = "James"
-                emp.position = "designer"
-                emp.wage = 2.5
+                emp.id = position.id
+                emp.name = position.name
+                emp.position = position.position
+                emp.wage = position.wage
             } else {
                 emp = Manager()
-                emp.id = "3"
-                emp.name = "James"
-                emp.position = "manager"
-                emp.wage = 2.5
+                emp.id = position.id
+                emp.name = position.name
+                emp.position = position.position
+                emp.wage = position.wage
             }
             return emp
     }

@@ -3,6 +3,4 @@ package com.example.psp2.entities.employees
 import javax.persistence.Entity
 
 @Entity
-class Manager: Employee(){
-    var responsobilities: String? = null
-}
+class Manager : Employee()
