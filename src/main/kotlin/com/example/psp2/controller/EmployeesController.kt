@@ -1,6 +1,6 @@
 package com.example.psp2.controller
 
-import com.example.psp2.entities.Employee
+import com.example.psp2.entities.employees.Employee
 import com.example.psp2.service.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier

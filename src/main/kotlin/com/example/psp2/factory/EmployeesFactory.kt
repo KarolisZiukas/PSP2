@@ -1,10 +1,9 @@
 package com.example.psp2.factory
 
-import com.example.psp2.entities.Designer
-import com.example.psp2.entities.Employee
-import com.example.psp2.entities.Manager
+import com.example.psp2.entities.employees.Designer
+import com.example.psp2.entities.employees.Employee
+import com.example.psp2.entities.employees.Manager
 import org.springframework.stereotype.Component
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 @Component
 class EmployeesFactory : BaseFactory() {

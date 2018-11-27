@@ -1,9 +1,6 @@
 package com.example.psp2.service
 
-import com.example.psp2.entities.Designer
-import com.example.psp2.entities.Employee
-import com.example.psp2.entities.Manager
-import com.example.psp2.factory.BaseFactory
+import com.example.psp2.entities.employees.Employee
 import com.example.psp2.factory.EmployeesFactory
 import com.example.psp2.repo.EmployeesRepo
 import org.springframework.beans.factory.annotation.Autowired

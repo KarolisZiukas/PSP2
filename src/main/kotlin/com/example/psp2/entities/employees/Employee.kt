@@ -1,4 +1,4 @@
-package com.example.psp2.entities
+package com.example.psp2.entities.employees
 
 import javax.persistence.DiscriminatorColumn
 import javax.persistence.Entity
