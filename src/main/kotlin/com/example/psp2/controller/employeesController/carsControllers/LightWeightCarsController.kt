@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/cars/lw")
-class LightWeightCarsControlle: CarsController() {
+class LightWeightCarsControlle {
 
     @Autowired
     @Qualifier("lightWeightCarService")
-    override lateinit var carsService: CarService
+    lateinit var carsService: CarService
 
 
     @GetMapping("/getAll")

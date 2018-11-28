@@ -9,6 +9,6 @@ import javax.persistence.Id
 open class Workplace {
     @Id
     open var id: String? = null
-    open var address: Double? = null
+    open var address: String? = null
     open var city: String? = null
 }

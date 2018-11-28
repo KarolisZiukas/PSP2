@@ -3,7 +3,9 @@ package com.example.psp2.factory
 import com.example.psp2.entities.employees.Workplaces.LondonWorkplace
 import com.example.psp2.entities.employees.Workplaces.TokyoWorkplace
 import com.example.psp2.entities.employees.Workplaces.Workplace
+import org.springframework.stereotype.Component
 
+@Component
 class WorkplaceFactory : BaseFactory<Workplace>() {
 
     override fun getModel(model: Workplace): Workplace {
