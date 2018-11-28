@@ -1,5 +1,6 @@
 package com.example.psp2.service.carsService
 
+import com.example.psp2.entities.employees.Employee
 import com.example.psp2.entities.employees.EmployeeCars.Car
 import com.example.psp2.entities.employees.EmployeeCars.Van
 import org.springframework.beans.factory.annotation.Qualifier
@@ -17,5 +18,9 @@ class VanService : BaseCarsService() {
             }
         }
         return vans
+    }
+
+    override fun update(model: Car) {
+        carsRepo.save(carsFactory.getModel(model))
     }
 }

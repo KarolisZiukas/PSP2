@@ -18,4 +18,8 @@ class LondonService : BaseService() {
         }
         return londonPlace
     }
+
+    override fun update(model: Workplace) {
+        workPlaceRepo.save(workPlaceFactory.getModel(model))
+    }
 }

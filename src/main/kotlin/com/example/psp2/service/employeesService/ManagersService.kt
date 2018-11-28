@@ -23,4 +23,8 @@ class ManagersService: BaseEmployeesService() {
         }
         return managerList
     }
+
+    override fun update(model: Employee) {
+        employeesRepo.save(employeesFactory.getModel(model))
+    }
 }

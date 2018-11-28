@@ -16,7 +16,6 @@ class LightWeightCarsControlle {
     @Qualifier("lightWeightCarService")
     lateinit var carsService: PspService<Car>
 
-
     @GetMapping("/getAll")
     fun getSpecific(): List<Car> {
         return carsService.getSpecific()

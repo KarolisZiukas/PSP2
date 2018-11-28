@@ -18,4 +18,8 @@ class LightWeightCarService: BaseCarsService() {
         }
         return lightWeightCars
     }
+
+    override fun update(model: Car) {
+        carsRepo.save(carsFactory.getModel(model))
+    }
 }

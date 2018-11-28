@@ -23,4 +23,8 @@ open class DesignersService: BaseEmployeesService() {
         }
         return designersList
     }
+
+    override fun update(model: Employee) {
+        employeesRepo.save(employeesFactory.getModel(model))
+    }
 }
