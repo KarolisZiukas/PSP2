@@ -1,7 +1,7 @@
 package com.example.psp2.controller.employeesController.carsControllers
 
 import com.example.psp2.entities.employees.EmployeeCars.Car
-import com.example.psp2.service.carsService.CarService
+import com.example.psp2.service.PspService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,11 +14,11 @@ class LightWeightCarsControlle {
 
     @Autowired
     @Qualifier("lightWeightCarService")
-    lateinit var carsService: CarService
+    lateinit var carsService: PspService<Car>
 
 
     @GetMapping("/getAll")
     fun getSpecific(): List<Car> {
-        return carsService.getSpecificCars()
+        return carsService.getSpecific()
     }
 }

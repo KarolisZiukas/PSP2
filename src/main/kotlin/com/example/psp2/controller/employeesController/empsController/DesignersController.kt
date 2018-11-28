@@ -1,6 +1,7 @@
 package com.example.psp2.controller.employeesController.empsController
 
 import com.example.psp2.entities.employees.Employee
+import com.example.psp2.service.PspService
 import com.example.psp2.service.employeesService.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
@@ -14,10 +15,10 @@ class DesignersController {
 
     @Autowired
     @Qualifier("designersService")
-    lateinit var employeesService: EmployeesService
+    lateinit var employeesService: PspService<Employee>
 
     @GetMapping("/getAll")
     fun getDesigners(): List<Employee> {
-        return employeesService.getSpecificEmployees("designer")
+        return employeesService.getSpecific()
     }
 }

@@ -1,6 +1,7 @@
 package com.example.psp2.controller.employeesController.empsController
 
 import com.example.psp2.entities.employees.Employee
+import com.example.psp2.service.PspService
 import com.example.psp2.service.employeesService.EmployeesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
@@ -12,7 +13,7 @@ class EmployeesController {
 
     @Autowired
     @Qualifier("managersService")
-    lateinit var employeesService: EmployeesService
+    lateinit var employeesService: PspService<Employee>
 
     @RequestMapping("/")
     fun test(): String {
@@ -20,14 +21,13 @@ class EmployeesController {
     }
 
     @GetMapping("/employees")
-    fun getEmployees(model: Model): String {
-        model.addAttribute("employees", Employee())
-        return "index"
+    fun getEmployees(model: Model): List<Employee> {
+        return employeesService.getAll()
     }
 
     @PostMapping("/employees/add")
     fun submitEmployee(@RequestBody employees: Employee): Employee {
-        employeesService.importData(employees)
+        employeesService.import(employees)
         return employees
     }
 }

@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service
 
 @Service
 @Qualifier(value = "vanService")
-class VanService: BaseCarsService(){
+class VanService : BaseCarsService() {
 
-    override fun getSpecificCars(): List<Van> {
+    override fun getSpecific(): List<Car> {
         val vans = mutableListOf<Van>()
         for (item in carsRepo.findAll()) {
-            if(item is Van) {
+            if (item is Van) {
                 vans.add(item)
             }
         }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 @Qualifier(value = "lightWeightCarService")
 class LightWeightCarService: BaseCarsService() {
 
-    override fun getSpecificCars(): List<Car> {
+    override fun getSpecific(): List<Car> {
         val lightWeightCars = mutableListOf<Car>()
         for (item in carsRepo.findAll()) {
             if(item is LightWeightCar) {

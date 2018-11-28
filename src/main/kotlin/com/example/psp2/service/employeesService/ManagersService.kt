@@ -1,6 +1,7 @@
 package com.example.psp2.service.employeesService
 
 import com.example.psp2.entities.employees.Employee
+import com.example.psp2.entities.employees.Manager
 import com.example.psp2.repo.EmployeesRepo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
@@ -13,10 +14,10 @@ class ManagersService: BaseEmployeesService() {
     @Autowired
     override lateinit var employeesRepo: EmployeesRepo
 
-    override fun getSpecificEmployees(position: String): List<Employee> {
+    override fun getSpecific(): List<Employee> {
         val managerList = mutableListOf<Employee>()
         for (item in employeesRepo.findAll()) {
-            if(item.position == position) {
+            if(item is Manager) {
                 managerList.add(item)
             }
         }
