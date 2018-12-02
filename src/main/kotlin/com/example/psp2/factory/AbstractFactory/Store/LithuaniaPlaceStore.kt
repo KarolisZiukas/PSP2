@@ -1,6 +1,5 @@
 package com.example.psp2.factory.AbstractFactory.Store
 
-import com.example.psp2.factory.AbstractFactory.factories.LatviaParametersFactory
 import com.example.psp2.factory.AbstractFactory.factories.LithuaniaParametersFactory
 import com.example.psp2.factory.AbstractFactory.types.BuildingType
 import com.example.psp2.factory.AbstractFactory.types.Office

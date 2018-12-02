@@ -4,9 +4,7 @@ import com.example.psp2.entities.employees.EmployeeCars.Car
 import com.example.psp2.factory.CarsFactory
 import com.example.psp2.repo.CarsRepo
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Service
 
-@Service
 class BrokenCarFacadeServiceImpl: FacadeCarService {
 
     @Autowired

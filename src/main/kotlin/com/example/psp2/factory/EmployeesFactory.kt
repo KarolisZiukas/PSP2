@@ -1,5 +1,6 @@
 package com.example.psp2.factory
 
+import com.example.psp2.entities.employees.Cleaner
 import com.example.psp2.entities.employees.Designer
 import com.example.psp2.entities.employees.Employee
 import com.example.psp2.entities.employees.Manager
@@ -11,6 +12,7 @@ class EmployeesFactory : BaseFactory<Employee>() {
     override fun getModel(model: Employee): Employee {
         return when {
             model.position == "Designer" -> createModel(model, Designer())
+            model.position == "Cleaner" -> createModel(model, Cleaner())
             else -> createModel(model, Manager())
         }
     }
