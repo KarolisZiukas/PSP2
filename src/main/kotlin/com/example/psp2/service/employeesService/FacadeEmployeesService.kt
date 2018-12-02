@@ -8,8 +8,6 @@ interface FacadeEmployeesService {
 
     fun import(model: Employee)
 
-    fun getByExperience(): List<Employee>
-
     fun getByPosition(position: String): List<Employee>
 
 }

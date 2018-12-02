@@ -6,7 +6,7 @@ import javax.persistence.Id
 
 @DiscriminatorColumn
 @Entity
-abstract class Employee {
+open class Employee {
     @Id
     var id: String? = null
     var wage: Double? = null

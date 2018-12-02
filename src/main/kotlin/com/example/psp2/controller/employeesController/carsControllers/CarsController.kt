@@ -47,9 +47,9 @@ class CarsController {
         return model
     }
 
-    @GetMapping("emp/{experience}")
-    fun getByExperience(@PathVariable experience: String): List<Car> {
-        return carsService.getByType(experience)
+    @GetMapping("emp/{position}")
+    fun getByExperience(@PathVariable position: String): List<Car> {
+        return carsService.getByType(position)
     }
 
 }

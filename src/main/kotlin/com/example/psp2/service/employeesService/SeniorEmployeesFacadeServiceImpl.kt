@@ -6,7 +6,7 @@ import com.example.psp2.repo.EmployeesRepo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
-//@Service
+@Service
 class SeniorEmployeesFacadeServiceImpl: FacadeEmployeesService  {
 
     @Autowired
@@ -19,18 +19,14 @@ class SeniorEmployeesFacadeServiceImpl: FacadeEmployeesService  {
     lateinit var employeesFactory: EmployeesFactory
 
     override fun getAll(): List<Employee> {
-        return employeesRepo.findAll()
+        return employeeService.getByExperience(employeesRepo.findAll(), "Senior")
     }
 
     override fun import(model: Employee) {
         employeesRepo.save(employeesFactory.getModel(model))
     }
 
-    override fun getByExperience(): List<Employee> {
-        return employeeService.getByExperience(employeesRepo.findAll(), "Senior")
-    }
-
     override fun getByPosition(position: String): List<Employee> {
-        return employeeService.getByPosition(employeesRepo.findAll(), position)
+        return employeeService.getByPosition(getAll(), position)
     }
 }

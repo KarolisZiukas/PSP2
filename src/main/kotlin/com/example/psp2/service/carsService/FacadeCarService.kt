@@ -8,8 +8,6 @@ interface FacadeCarService {
 
     fun import(model: Car)
 
-    fun getByCondition(): List<Car>
-
     fun getByType(type: String): List<Car>
 
 

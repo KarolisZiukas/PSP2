@@ -10,7 +10,7 @@ class EmployeesFactory : BaseFactory<Employee>() {
 
     override fun getModel(model: Employee): Employee {
         return when {
-            model.position == "designer" -> createModel(model, Designer())
+            model.position == "Designer" -> createModel(model, Designer())
             else -> createModel(model, Manager())
         }
     }
@@ -21,6 +21,7 @@ class EmployeesFactory : BaseFactory<Employee>() {
         emp.id = model.id
         emp.name = model.name
         emp.wage = model.wage
+        emp.position = model.position
         emp.experience = model.experience
         return emp
     }

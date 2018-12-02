@@ -11,4 +11,5 @@ open class Workplace {
     open var id: String? = null
     open var address: String? = null
     open var city: String? = null
+    var constructionType: String? = null
 }
