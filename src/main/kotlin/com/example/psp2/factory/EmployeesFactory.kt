@@ -21,6 +21,7 @@ class EmployeesFactory : BaseFactory<Employee>() {
         emp.id = model.id
         emp.name = model.name
         emp.wage = model.wage
+        emp.experience = model.experience
         return emp
     }
 }

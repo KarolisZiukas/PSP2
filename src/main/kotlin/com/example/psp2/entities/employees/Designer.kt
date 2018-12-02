@@ -3,6 +3,4 @@ package com.example.psp2.entities.employees
 import javax.persistence.Entity
 
 @Entity
-class Designer: Employee() {
-    override val position: String? = "Designer"
-}
+class Designer: Employee()
