@@ -1,7 +1,9 @@
 package com.example.psp2.service.workplaceService
 
 import com.example.psp2.entities.employees.Workplaces.Workplace
+import org.springframework.stereotype.Service
 
+@Service
 class PlaceServiceImpl: PlaceService {
 
     override fun getByConstruction(list: List<Workplace>, constructionType: String): List<Workplace> {
