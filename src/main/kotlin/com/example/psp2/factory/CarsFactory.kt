@@ -10,7 +10,7 @@ class CarsFactory: BaseFactory<Car>() {
 
     override fun getModel(model: Car): Car {
         return when {
-            model.type == "van" -> createModel(model, Van())
+            model.type == "Van" -> createModel(model, Van())
             else -> createModel(model, LightWeightCar())
         }
     }
@@ -22,6 +22,7 @@ class CarsFactory: BaseFactory<Car>() {
         car.make = model.make
         car.model = model.model
         car.type = model.type
+        car.isBroken = model.isBroken
         return car
     }
 }

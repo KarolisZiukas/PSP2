@@ -9,22 +9,20 @@ import org.springframework.stereotype.Service
 
 @Service
 @Qualifier("designersService")
-open class DesignersService: BaseEmployeesService() {
+open class DesignersService: BaseFacadeEmployeesService() {
 
     @Autowired
     override lateinit var employeesRepo: EmployeesRepo
 
-    override fun getSpecific(): List<Employee> {
-        val designersList: MutableList<Employee> = mutableListOf()
-        for(item in employeesRepo.findAll()) {
-            if (item is Designer) {
-                designersList.add(item)
-            }
-        }
-        return designersList
-    }
+//    override fun getByCondition(): List<Employee> {
+//        val designersList: MutableList<Employee> = mutableListOf()
+//        for(item in employeesRepo.findAll()) {
+//            if (item is Designer) {
+//                designersList.add(item)
+//            }
+//        }
+//        return designersList
+//    }
 
-    override fun update(model: Employee) {
-        employeesRepo.save(employeesFactory.getModel(model))
-    }
+
 }

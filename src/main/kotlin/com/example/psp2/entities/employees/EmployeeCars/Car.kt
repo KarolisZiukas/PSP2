@@ -11,5 +11,6 @@ open class Car {
     var id: String? = null
     var make: String? = null
     var model: String? = null
+    var isBroken: Boolean? = null
     var type: String? = null
 }

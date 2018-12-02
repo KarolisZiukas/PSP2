@@ -12,9 +12,7 @@ import org.springframework.stereotype.Service
 @Service
 @ComponentScan(value = ["com.example.PSP2.repo"])
 @Qualifier("baseService")
-abstract class BaseEmployeesService : PspService<Employee> {
-
-
+abstract class BaseFacadeEmployeesService : PspService<Employee> {
     @Autowired
     lateinit var employeesFactory: EmployeesFactory
 
@@ -27,6 +25,10 @@ abstract class BaseEmployeesService : PspService<Employee> {
     }
 
     override fun import(model: Employee) {
+        employeesRepo.save(employeesFactory.getModel(model))
+    }
+
+    override fun update(model: Employee) {
         employeesRepo.save(employeesFactory.getModel(model))
     }
 }

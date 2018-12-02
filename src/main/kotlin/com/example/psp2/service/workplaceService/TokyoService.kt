@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service
 
 @Service
 @Qualifier(value = "tokyoPlaceService")
-class TokyoService : BaseService() {
+class TokyoService : BaseFacadeWorkplaceService() {
 
-    override fun getSpecific(): List<Workplace> {
+    fun getSpecific(): List<Workplace> {
         val tokyoPlace = mutableListOf<Workplace>()
         for (item in workPlaceRepo.findAll()) {
             if (item is TokyoWorkplace) {
@@ -17,9 +17,5 @@ class TokyoService : BaseService() {
             }
         }
         return tokyoPlace
-    }
-
-    override fun update(model: Workplace) {
-        workPlaceRepo.save(workPlaceFactory.getModel(model))
     }
 }

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service
 
 @Service
 @Qualifier(value = "londonPlaceService")
-class LondonService : BaseService() {
+class LondonService : BaseFacadeWorkplaceService() {
 
-    override fun getSpecific(): List<Workplace> {
+    fun getSpecific(): List<Workplace> {
         val londonPlace = mutableListOf<Workplace>()
         for (item in workPlaceRepo.findAll()) {
             if (item is LondonWorkplace) {
@@ -19,7 +19,5 @@ class LondonService : BaseService() {
         return londonPlace
     }
 
-    override fun update(model: Workplace) {
-        workPlaceRepo.save(workPlaceFactory.getModel(model))
-    }
+
 }

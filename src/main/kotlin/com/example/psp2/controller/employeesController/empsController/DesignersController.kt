@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/employees/designers")
 class DesignersController {
 
-    @Autowired
-    @Qualifier("designersService")
-    lateinit var employeesService: PspService<Employee>
-
-    @GetMapping("/getAll")
-    fun getDesigners(): List<Employee> {
-        return employeesService.getSpecific()
-    }
+//    @Autowired
+//    @Qualifier("designersService")
+//    lateinit var facadeEmployeesService: PspService<Employee>
+//
+//    @GetMapping("/getAll")
+//    fun getDesigners(): List<Employee> {
+//        return facadeEmployeesService.getByCondition()
+//    }
 }

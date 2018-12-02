@@ -20,7 +20,6 @@ class EmployeesFactory : BaseFactory<Employee>() {
         emp = type
         emp.id = model.id
         emp.name = model.name
-        emp.position = model.position
         emp.wage = model.wage
         return emp
     }

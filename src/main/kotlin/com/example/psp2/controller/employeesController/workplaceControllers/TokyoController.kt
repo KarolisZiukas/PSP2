@@ -16,8 +16,8 @@ class TokyoController {
     @Qualifier("tokyoPlaceService")
     lateinit var placeService: PspService<Workplace>
 
-    @GetMapping("/getAll")
-    fun getSpecific(): List<Workplace> {
-        return placeService.getSpecific()
-    }
+//    @GetMapping("/getAll")
+//    fun getByCondition(): List<Workplace> {
+//        return placeService.getByCondition()
+//    }
 }

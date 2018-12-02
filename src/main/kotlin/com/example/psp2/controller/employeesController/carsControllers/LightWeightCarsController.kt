@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/cars/lw")
 class LightWeightCarsControlle {
-
-    @Autowired
-    @Qualifier("lightWeightCarService")
-    lateinit var carsService: PspService<Car>
-
-    @GetMapping("/getAll")
-    fun getSpecific(): List<Car> {
-        return carsService.getSpecific()
-    }
+//
+//    @Autowired
+//    @Qualifier("lightWeightCarService")
+//    lateinit var carsService: PspService<Car>
+//
+//    @GetMapping("/getAll")
+//    fun getByCondition(): List<Car> {
+//        return carsService.getByCondition()
+//    }
 }

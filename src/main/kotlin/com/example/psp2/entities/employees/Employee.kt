@@ -6,10 +6,10 @@ import javax.persistence.Id
 
 @DiscriminatorColumn
 @Entity
-open class Employee {
+open abstract class Employee {
     @Id
     var id: String? = null
     var wage: Double? = null
     var name: String? = null
-    var position: String? = null
+    open abstract val position: String?
 }

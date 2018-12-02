@@ -4,8 +4,6 @@ interface PspService<T> {
 
     fun getAll(): List<T>
 
-    fun getSpecific(): List<T>
-
     fun import(model: T)
 
     fun update(model: T)
