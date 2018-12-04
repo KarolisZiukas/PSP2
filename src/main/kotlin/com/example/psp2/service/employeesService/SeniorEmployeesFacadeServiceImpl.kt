@@ -1,7 +1,7 @@
 package com.example.psp2.service.employeesService
 
 import com.example.psp2.entities.employees.Employee
-import com.example.psp2.factory.EmployeesFactory
+import com.example.psp2.domain.factory.EmployeesFactory
 import com.example.psp2.repo.EmployeesRepo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service

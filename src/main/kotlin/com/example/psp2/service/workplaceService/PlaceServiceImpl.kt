@@ -1,6 +1,6 @@
 package com.example.psp2.service.workplaceService
 
-import com.example.psp2.entities.employees.Workplaces.Workplace
+import com.example.psp2.entities.Workplaces.Workplace
 import org.springframework.stereotype.Service
 
 @Service

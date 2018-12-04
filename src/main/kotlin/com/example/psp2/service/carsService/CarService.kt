@@ -1,6 +1,6 @@
 package com.example.psp2.service.carsService
 
-import com.example.psp2.entities.employees.EmployeeCars.Car
+import com.example.psp2.entities.EmployeeCars.Car
 
 interface CarService {
 

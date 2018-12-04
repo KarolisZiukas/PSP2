@@ -1,7 +1,7 @@
 package com.example.psp2.service.workplaceService
 
-import com.example.psp2.entities.employees.Workplaces.Workplace
-import com.example.psp2.factory.WorkplaceFactory
+import com.example.psp2.entities.Workplaces.Workplace
+import com.example.psp2.domain.factory.WorkplaceFactory
 import com.example.psp2.repo.WorkplacesRepo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service

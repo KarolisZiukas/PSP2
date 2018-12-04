@@ -1,7 +1,7 @@
 package com.example.psp2.service.carsService
 
-import com.example.psp2.entities.employees.EmployeeCars.Car
-import com.example.psp2.factory.CarsFactory
+import com.example.psp2.entities.EmployeeCars.Car
+import com.example.psp2.domain.factory.CarsFactory
 import com.example.psp2.repo.CarsRepo
 import org.springframework.beans.factory.annotation.Autowired
 
