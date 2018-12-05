@@ -2,6 +2,7 @@ package com.example.psp2.domain.factory.AbstractFactory.Store
 
 import com.example.psp2.domain.factory.AbstractFactory.factories.LatviaParametersFactory
 import com.example.psp2.domain.factory.AbstractFactory.factories.LithuaniaParametersFactory
+import com.example.psp2.domain.factory.AbstractFactory.types.Arena
 import com.example.psp2.domain.factory.AbstractFactory.types.BuildingType
 import com.example.psp2.domain.factory.AbstractFactory.types.Office
 import com.example.psp2.domain.factory.AbstractFactory.types.Warehouse
@@ -19,6 +20,10 @@ class LatviaPlaceStore : Store() {
             "Office" -> {
                 building = Office(factory)
                 building.name = "Latvia office"
+            }
+            "Arena" -> {
+                building = Arena(factory)
+                building.name = "Latvia arena"
             }
         }
 

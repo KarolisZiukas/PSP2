@@ -20,10 +20,13 @@ public class Psp2Application {
         Store lvStore = new LatviaPlaceStore();
 
         BuildingType ltOffice = ltStore.startProject("Warehouse");
-        System.out.println("You just build " + ltOffice.printInfo() + "\n");
+        System.out.println("You just built " + ltOffice.printInfo() + "\n");
 
         ltOffice = lvStore.startProject("Office");
-        System.out.println("You just build " + ltOffice.printInfo() + "\n");
+        System.out.println("You just built " + ltOffice.printInfo() + "\n");
+
+        BuildingType ltArena = ltStore.startProject("Arena");
+        System.out.println("You jusst built"+ ltArena.printInfo() + "\n");
 
 
     }

@@ -4,6 +4,7 @@ import com.example.psp2.AppConfigA
 import com.example.psp2.entities.employees.Employee
 import com.example.psp2.entities.EmployeeCars.Car
 import com.example.psp2.entities.Workplaces.Workplace
+import com.example.psp2.service.carsService.FacadeCarService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
@@ -12,6 +13,9 @@ class MainController {
 
    @Autowired
    lateinit var appConfig: AppConfigA
+
+    @Autowired
+    lateinit var carService: FacadeCarService
 
     @GetMapping("/cars/get")
     fun getAll(): List<Car> {
